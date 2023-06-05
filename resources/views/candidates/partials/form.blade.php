@@ -87,16 +87,31 @@
 </div>
 <hr>
 @if(isset($candidateFiles) && count($candidateFiles))
-    <div class="list-group">
-        @foreach($candidateFiles as $file)
-            <div class="list-group-item list-group-item-action parent-file-{{ Hashids::encode($file->id) }}">
-                {{ $file->name }}
+<table class="table table-bordered">
+    <tr>
+        <th>Description</th>
+        <th>Name (generated)</th>
+        <th class="text-right">Actions</th>
+    </tr>
+    @foreach($candidateFiles as $file)
+        <tr>
+            <td>
+                <input
+                    type="text"
+                    name="candidate_documents[{{ $file->id }}]"
+                    value="{{ $file->description }}"
+                    placeholder="Enter document description here"
+                    class="form-control"
+                />
+            </td>
+            <td>{{ $file->name }}</td>
+            <td>
                 <a href="##" data-parent="parent-file-{{ Hashids::encode($file->id) }}" data-view="{{ route('candidate.file.delete', Hashids::encode($file->id)) }}" data-id="{{ Hashids::encode($file->id) }}" data-message="Are you sure you want to delete the File?" class="btn-delete btn btn-dg pull-right xs-ml-5"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 <a href="/uploads/{{ $file->name }}" target="_blank" class="btn btn-dg pull-right"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-        @endforeach
-    </div>
-    <hr>
+            </td>
+        </tr>
+    @endforeach
+</table>
 @endif
 <div class="row">
     <div class="col-md-12">
@@ -108,16 +123,31 @@
 </div>
 <hr>
 @if(isset($candidateAudios) && count($candidateAudios))
-    <div class="list-group">
-        @foreach($candidateAudios as $audio)
-            <div class="list-group-item list-group-item-action parent-audio-{{ Hashids::encode($audio->id) }}">
-                {{ $audio->name }}
+<table class="table table-bordered">
+    <tr>
+        <th>Description</th>
+        <th>Name (generated)</th>
+        <th class="text-right">Actions</th>
+    </tr>
+    @foreach($candidateAudios as $audio)
+        <tr>
+            <td>
+                <input
+                    type="text"
+                    name="candidate_documents[{{ $audio->id }}]"
+                    value="{{ $audio->description }}"
+                    placeholder="Enter document description here"
+                    class="form-control"
+                />
+            </td>
+            <td>{{ $audio->name }}</td>
+            <td>
                 <a href="##" data-parent="parent-audio-{{ Hashids::encode($audio->id) }}" data-view="{{ route('candidate.audio.delete', Hashids::encode($audio->id)) }}" data-id="{{ Hashids::encode($audio->id) }}" data-message="Are you sure you want to delete the Audio File?" class="btn-delete btn btn-dg pull-right xs-ml-5"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 <a href="/uploads/{{ $audio->name }}" target="_blank" class="btn btn-dg pull-right"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-        @endforeach
-    </div>
-    <hr>
+            </td>
+        </tr>
+    @endforeach
+</table>
 @endif
 @foreach($clients as $client)
     <div class="custom-control custom-radio custom-control-inline xs-mb-30">

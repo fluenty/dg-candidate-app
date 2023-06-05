@@ -283,6 +283,14 @@ class CandidateController extends Controller
             }
         }
 
+        // Update the candidate document descriptions.
+        if (!empty($request->candidate_documents) && is_array($request->candidate_documents)) {
+            foreach ($request->candidate_documents as $file_id => $description) {
+                File::where('id', $file_id)
+                    ->update(['description' => $description]);
+            }
+        }
+
         return redirect()->route('candidate.index')->with(['success' => 'Candidate successfully updated.']);
     }
 
