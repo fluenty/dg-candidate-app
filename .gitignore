@@ -1,0 +1,15 @@
+.DS_Store
+vendor
+node_modules
+Homestead.yaml
+Homestead.json
+
+# Laravel 5 & Lumen specific
+bootstrap/cache/*
+.env.php
+.env
+npm-debug.log
+public/uploads/*
+bower_components/*
+public/css/pages.css.map
+/.idea/

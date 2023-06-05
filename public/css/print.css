@@ -1,0 +1,298 @@
+body, html {
+    background: #fff;
+}
+.print {
+    color: #333;
+    font-size: 28px;
+}
+.print:hover {
+    text-decoration: none;
+    color: #333;
+    opacity: 0.8;
+}
+.print p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.print-candidate {
+    position: absolute;
+    left: 100px;
+    z-index: 1;
+    top: 40px;
+}
+.avatar-print {
+    vertical-align: middle;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: auto;
+    border: 10px solid #1a313e;
+}
+.avatar-overview {
+    width: 50px !important;
+    height: 50px !important;
+    border: 2px solid #1a313e
+}
+#avatar-print {
+   width: 180px;
+   height: 180px;
+}
+#avatar-print-small {
+    width: 40px;
+    height: 40px;    
+}
+#avatar-print img, #avatar-print-small img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.print-cover-bg, .print-header-bg, .candidates-header-text {
+    display: none;
+}
+.all-candidates .avatar-print {
+    margin-top: 20px;
+}
+.all-candidates .candidate-name-score {
+    border: none;
+}
+.all-candidates .candidate-title {
+    border-bottom: 1px solid #e3bf7d;
+    padding: 10px 50px;
+}
+.page-logo {
+    display: none;
+}
+.pages {
+    position: relative;
+}
+.candidates-header-text {
+    text-align: center;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.candidates-header-text h3 {
+    color: #1a313e !important;
+}
+@media print
+{
+    @page {
+        size: landscape;
+        margin: 0;
+    }
+    body, *{
+      -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+      color-adjust: exact !important;  /*Firefox*/
+    }
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .page-break {
+        page-break-after: always;
+    }
+    .pages {
+        position: relative;
+        page-break-after: always;
+        margin: 0 20px;
+    }
+    .candidates-header-text {
+        display: block;
+    }
+    .page-logo {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 50px;
+    }
+    .print-cover-bg, .print-header-bg, .thank-you-bg {
+        display: block;
+        page-break-after: always;
+        position: relative;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border-bottom: 10px solid #e3bf7d;
+    }
+    .print-cover-bg .bg-img, .print-header-bg .bg-img {
+        height: 100% !important;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+
+        display: block;
+        min-height: 100%;
+        min-width: 100%;
+    }
+    .print-cover-bg .logo-img {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        height: 70px;
+    }
+    .print-header-bg .logo-img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        height: 70px;
+    }
+    .print-cover-bg .cover-page-text {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        text-align: right;
+    }
+    .print-header-bg .cover-page-text {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .thank-you-bg .thank-you-text {
+        position: absolute;
+        bottom: 20px !important;
+        right: 20px;
+        text-align: right;
+    }
+    .print-cover-bg .cover-page-text p {
+        color: #e3bf7d !important;
+        font-size: 26px;
+        letter-spacing: 5px;
+        margin-bottom: 0px;
+    }
+    .print-header-bg .cover-page-text p {
+        color: #e3bf7d !important;
+        font-size: 26px;
+        letter-spacing: 5px;
+        margin-bottom: 0px;
+    }
+    .thank-you-bg .thank-you-text p {
+        color: #e3bf7d !important;
+        font-size: 26px;
+        letter-spacing: 5px;
+        margin-bottom: 0px;
+    }
+    .all-candidates .avatar-print {
+        vertical-align: middle;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: auto;
+        border: 6px solid #1a313e;
+        margin-top: 20px;
+    }
+    .all-candidates #avatar-print {
+       width: 80px;
+       height: 80px;
+    }
+    .all-candidates #avatar-print img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .all-candidates .candidate-name-score {
+        margin: 0 !important;
+    }
+    .all-candidates .candidate-name-score .candidate-title {
+        font-size: 16px;
+        color: #1a313e !important;
+        text-transform: capitalize;
+    }
+    .all-candidates .question-block h3 {
+        margin: 0;
+    }
+    .all-candidates .question-block h3 strong {
+        font-size: 12px;
+        color: #1a313e !important;
+        text-transform: capitalize;
+    }
+    .all-candidates .results-user-details {
+        margin: 0 !important;
+    }
+    .all-candidates .question {
+        border: none;
+        padding: 0;
+        font-size: 11px;
+        color: #1a313e !important;
+    }
+    .all-candidates .question-score {
+        position: absolute;
+        right: 0px;
+        bottom: -10px;
+    }
+    .all-candidates .question-score p strong {
+        font-size: 11px;
+        color: #1a313e !important;
+        text-align: right;
+    }
+    .all-candidates .question-block {
+        padding: 5px 0 !important;
+        position: relative;
+    }
+    .all-candidates .table>tbody>tr>td {
+        padding: 0 !important;
+        color: #1a313e !important;
+        font-size: 11px;
+    }
+    .all-candidates .table>tbody>tr>th {
+        color: #1a313e !important;
+        font-size: 12px;
+        padding: 0 !important;
+        border-top: 0;
+    }
+    .candidates-results {
+        margin-top: 20px;
+    }
+    .candidates-results .avatar-print {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: auto;
+        border: 4px solid #1a313e;
+    }
+    .candidates-results #avatar-print {
+        width: 50px;
+        height: 50px;
+    }
+    .candidates-results #avatar-print img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .all-candidates .candidate-title {
+        border: none;
+        padding: 0;
+        font-size: 11px !important;
+    }
+    .candidates-results tr td strong {
+        color: #1a313e !important;
+    }
+    .candidates-results tr, .moderators-table tr {
+        height: 30px;
+    }
+    .candidates-results-header, .results-user-details {
+        position: relative;
+    }
+    .moderators-header-title strong {
+        color: #1a313e !important;
+        position: relative;
+        top: 72px;
+    }
+    .question-block .question p, .question-block .question p strong, .question-block .question p em {
+        color: #1a313e !important;
+    }
+    .candidate-title {
+        line-height: 2;
+        margin-top: 10px;
+    }
+}
