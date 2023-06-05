@@ -250,11 +250,16 @@ class CandidateController extends Controller
                 $extension = $file->getClientOriginalExtension();
                 $filename  = strtolower($candidate->name).'-'.strtolower($candidate->surname).'-'.time().$i.'.'.$extension;
 
+                // Add the description to the filename.
+                if (!empty($request->candidate_document_description))
+                    $filename = str_replace(' ', '-', $request->candidate_document_description) . '-' . $filename;
+
                 $uploadedFile = new File;
                 $uploadedFile->name = $file->storeAs('/', $filename);
                 $uploadedFile->extension = $extension;
                 $uploadedFile->mime = $file->getClientMimeType();
                 $uploadedFile->size = $file->getSize();
+                $uploadedFile->description = $request->candidate_document_description;
                 $uploadedFile->save();
 
                 CandidateFile::insert([
@@ -269,11 +274,16 @@ class CandidateController extends Controller
                 $extension = $audio->getClientOriginalExtension();
                 $filename  = strtolower($candidate->name).'-'.strtolower($candidate->surname).'-'.time().$i.'.'.$extension;
 
+                // Add the description to the filename.
+                if (!empty($request->audio_document_description))
+                    $filename = str_replace(' ', '-', $request->audio_document_description) . '-' . $filename;
+
                 $uploadedFile = new File;
                 $uploadedFile->name = $audio->storeAs('/', $filename);
                 $uploadedFile->extension = $extension;
                 $uploadedFile->mime = $audio->getClientMimeType();
                 $uploadedFile->size = $audio->getSize();
+                $uploadedFile->description = $request->audio_document_description;
                 $uploadedFile->save();
 
                 CandidateAudio::insert([

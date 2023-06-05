@@ -81,7 +81,24 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="files">Candidate Documents</label>
-            <input type="file" class="form-control-file" name="files[]" id="files" multiple="multiple" accept="application/pdf">
+            <input
+                type="file"
+                class="form-control-file"
+                name="files[]"
+                id="files"
+                multiple="multiple"
+                accept="application/pdf"
+            />
+         </div>
+         <div class="form-group">
+            <label for="files">Description</label>
+            <input
+                type="text"
+                class="form-control"
+                name="candidate_document_description"
+                id="document_name"
+                placeholder="Describe the files"
+            />
          </div>
      </div>
 </div>
@@ -117,8 +134,25 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="audios">Audio Files</label>
-            <input type="file" class="form-control-file" name="audios[]" id="audios" multiple="multiple" accept="video/mp4,audio/mpeg3,.mp3">
+            <input
+                type="file"
+                class="form-control-file"
+                name="audios[]"
+                id="audios"
+                multiple="multiple"
+                accept="video/mp4,audio/mpeg3,.mp3"
+            />
          </div>
+         <div class="form-group">
+            <label for="files">Description</label>
+            <input
+                type="text"
+                class="form-control"
+                name="audio_document_description"
+                id="audio_name"
+                placeholder="Describe the files"
+            />
+        </div>
      </div>
 </div>
 <hr>
