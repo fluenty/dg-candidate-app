@@ -644,7 +644,7 @@ div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTable
     border: none;
     border-radius: 50px;
     margin: 0 0 5px 0;
-    height: 54px;
+    /* height: 54px; */
 }
 .profile-download-list .list-group-item:hover {
     background: #e3bf7d;
